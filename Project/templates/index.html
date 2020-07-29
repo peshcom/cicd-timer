@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>CI/CD timer</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<style>
+			body
+			{
+				padding: 0; 
+				background: url('/static/background.jpg') no-repeat;
+				background-size: cover; 
+				background-color: #58576a; 
+				background-blend-mode: multiply; 
+			}
+
+			.outer:before
+			{
+				content: '';
+				display: inline-block;
+				height: 100%;
+				vertical-align: middle;
+			}
+			/* добавим горизонтальное центрирование */
+			.outer
+			{
+				text-align: center;
+			}
+
+			.time
+			{
+				display: inline-block;
+				vertical-align: middle;
+				color: #fff; 
+				font-family: 'Lobster', cursive; 
+				font-size: 48px; 
+			}
+	</style>
+	</head>
+	<body>
+		<div class="outer" style="height:100%; width: 100%;">
+			<span class="time"></span>
+		</div>
+	</body>
+<script type="text/javascript">
+function change_time()
+{
+	var now = new Date();
+	var hour = now.getHours()<10?"0"+now.getHours():now.getHours();
+	var minute = now.getMinutes()<10?"0"+now.getMinutes():now.getMinutes();
+	var second = now.getSeconds()<10?"0"+now.getSeconds():now.getSeconds()
+	var str_time =  hour + ":" + minute	+ ":" + second;
+
+	document.getElementsByClassName("time")[0].textContent = str_time;
+}
+	change_time();
+	setInterval(change_time, 1000);
+</script>
+</html>
