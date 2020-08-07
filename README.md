@@ -1,3 +1,4 @@
 Приложение - таймер
 ---
-[![BCH compliance](https://bettercodehub.com/edge/badge/peshcom/cicd-timer?branch=master)](https://bettercodehub.com/)
+
+See https://powerful-spire-07070.herokuapp.com/
